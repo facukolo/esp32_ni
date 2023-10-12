@@ -14,8 +14,8 @@ CLIENT_ID = ubinascii.hexlify(unique_id()).decode('utf-8')
 mqtt = MQTTClient(CLIENT_ID, SERVIDOR_MQTT,
                   port=8883, keepalive=10, ssl=True)
 
-led = Pin(2, Pin.OUT)
-d = dht.DHT22(Pin(25))
+led = Pin(22, Pin.OUT)
+d = dht.DHT22(Pin(23))
 contador = 0
 
 def heartbeat(nada):
