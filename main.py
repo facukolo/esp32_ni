@@ -15,8 +15,8 @@ mqtt = MQTTClient(CLIENT_ID, SERVIDOR_MQTT,
                   port=8883, keepalive=40, ssl=True)
 
 sw = Pin(23, Pin.IN)
-led = Pin(2, Pin.OUT)
-d = dht.DHT22(Pin(25))
+led = Pin(22, Pin.OUT)
+d = dht.DHT22(Pin(19))
 
 def sub_cb(topic, msg):
     print((topic, msg))
@@ -42,7 +42,7 @@ while True:
         d.measure()
         temperatura=d.temperature()
         humedad=d.humidity()
-        datos=json.dumps(OrderedDict([
+        datos=json.dumps(OrderedDict([("ElTigre",1),
             ('temperatura',temperatura),
             ('humedad',humedad)
         ]))
