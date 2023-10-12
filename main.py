@@ -10,12 +10,13 @@ from settings import SERVIDOR_MQTT
 from umqtt.robust import MQTTClient
 
 CLIENT_ID = ubinascii.hexlify(unique_id()).decode('utf-8')
+print(CLIENT_ID)
 
 mqtt = MQTTClient(CLIENT_ID, SERVIDOR_MQTT,
                   port=8883, keepalive=10, ssl=True)
 
 led = Pin(22, Pin.OUT)
-d = dht.DHT22(Pin(23))
+d = dht.DHT22(Pin(19))
 contador = 0
 
 def heartbeat(nada):
@@ -43,7 +44,7 @@ while True:
         d.measure()
         temperatura = d.temperature()
         humedad = d.humidity()
-        datos = json.dumps(OrderedDict([
+        datos = json.dumps(OrderedDict([('ESPTigre',0),
             ('temperatura',temperatura),
             ('humedad',humedad)
         ]))
