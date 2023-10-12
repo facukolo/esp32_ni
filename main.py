@@ -1,4 +1,4 @@
-# Germán Andrés Xander 2023
+# Facundo Tigre Koloswki 2023
 
 from machine import Pin
 import dht
@@ -7,9 +7,9 @@ import json
 from collections import OrderedDict
 
 sw = Pin(23, Pin.IN)
-led = Pin(2, Pin.OUT)
-d = dht.DHT22(Pin(25))
-print("esperand pulsador")
+led = Pin(22, Pin.OUT)
+d = dht.DHT22(Pin(19))
+print("esperando pulsador")
 contador=0
 
 while True:
