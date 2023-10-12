@@ -1,4 +1,4 @@
-# Facundo Koloswki 2023
+# Facundo Koloswki N 2023
 
 from machine import Pin
 import dht
